@@ -1,0 +1,28 @@
+<div class="container">
+    <div class="text-center m-5">
+        <hr>
+        <h1>{{titulo}}</h1>
+        <hr>
+    </div>
+    <div class="row">
+        <form action="./login" method="post">
+            <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label">Usuario</label>
+                <input type="text" class="form-control" name="usuario" placeholder="Usuario">
+            </div>
+            <div class="mb-3">
+                <label for="exampleFormControlInput1" class="form-label">Password</label>
+                <input type="password" class="form-control" name="password" placeholder="Password">
+            </div>
+
+            <div class="mb-3 text-center">
+                <input type="submit" class="button btn-primary w-50 p-2" value="Enviar Datos">
+            </div>
+        </form>
+        <div class="text-center validacion">
+            <h2 class="text-danger">
+                {{validacion}}
+            </h2>
+        </div>
+    </div>
+</div>

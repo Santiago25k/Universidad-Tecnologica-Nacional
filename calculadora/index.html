@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/bootstrap.min.css" />
+    <title>Calculadora</title>
+  </head>
+
+  <body>
+    <main>
+      <div class="text-center">
+        <div class="m-5 row">
+          <label for="staticEmail" class="col-sm-2 col-form-label"
+            >Número</label
+          >
+          <div class="col-sm-10">
+            <input type="number" class="form-control" id="numuno" />
+          </div>
+        </div>
+        <div class="m-5 row">
+          <label for="inputPassword" class="col-sm-2 col-form-label"
+            >Otro Número</label
+          >
+          <div class="col-sm-10">
+            <input type="number" class="form-control" id="numdos" />
+          </div>
+        </div>
+        <div class="container">
+          <div class="row justify-content-center">
+            <div class="col-lg-4 border border-primary">
+              <div class="m-2" id="resultado">0</div>
+            </div>
+            <div class="col-lg-1">
+              <button class="btn btn-success m-1" id="clear">C</button>
+            </div>
+          </div>
+          <div class="d-f">
+            <button class="btn btn-success w-25 m-3" id="sumar">Sumar</button>
+            <button class="btn btn-success w-25 m-3" id="restar">Restar</button>
+            <button class="btn btn-success w-25 m-3" id="multi">
+              Multiplicar
+            </button>
+            <button class="btn btn-success w-25 m-3" id="divi">Dividir</button>
+          </div>
+        </div>
+      </div>
+    </main>
+    <script src="./js/main.js"></script>
+  </body>
+</html>

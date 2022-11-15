@@ -1,0 +1,35 @@
+<div class="container primer-div">
+    <div class="row">
+        <div class="col-md-6 offset-md-3">
+            <div class="text-center m-4">
+                <h1>{{titulo}}</h1>
+            </div>
+            <div class="row">
+                <form action="./contacto" method="post">
+                    <div class="input-group mb-3">
+                        <span class="input-group-text">Nombre:</span>
+                        <input type="text" class="form-control" name="nombre" placeholder="" required>
+                    </div>
+                    <div class="input-group mb-3">
+                        <span class="input-group-text">Email:</span>
+                        <input type="email" class="form-control" name="email" placeholder="nombre@ejemplo.com" required>
+                    </div>
+                    <div class="input-group mb-3">
+                        <span class="input-group-text">Descripción:</span>
+                        <textarea type="text" class="form-control" name="descripcion"
+                            placeholder="Escriba un descripción de las peliculas o series que quiere" rows="5"
+                            required></textarea>
+                    </div>
+                    <div class="mb-3 text-center">
+                        <input type="submit" class="btn btn-primary" value="Enviar Datos">
+                    </div>
+                </form>
+                <div class="text-center validacion">
+                    <h2 class="text-danger">
+                        {{validacion}}
+                    </h2>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

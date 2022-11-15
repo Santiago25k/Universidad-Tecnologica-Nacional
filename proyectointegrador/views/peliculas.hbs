@@ -1,0 +1,122 @@
+{{!-- Mostramos las Peliculas en la Tabla --}}
+<div class="container primer-div">
+    <div class="text-center m-5">
+        <h2> Lista de Peliculas</h2>
+    </div>
+
+    <div class="table-responsive">
+        <table class="table table-striped text-white" id="mytable">
+            <div class="aviso-scroll">
+                <span class="bi bi-chevron-left"></span> desliza <span class="bi bi-chevron-right"></span>
+                <thead>
+            </div>
+            <tr>
+                <th>#</th>
+                <th>Tipo</th>
+                <th>Nomkbre</th>
+                <th>Fecha</th>
+                <th>Pais</th>
+                <th>Comentarios</th>
+                <th>Acción</th>
+            </tr>
+            </thead>
+            <tbody>
+                {{#each results}}
+                <tr>
+                    <td class="text-white"> {{ID_PELICULA}}</td>
+                    <td class="text-white"> {{TIPO}}</td>
+                    <td class="text-white"> {{NOMBRE}}</td>
+                    <td class="text-white"> {{FECHA}}</td>
+                    <td class="text-white"> {{PAIS}}</td>
+                    <td class="text-white"> {{COMENTARIOS}}</td>
+                    <td><a href="/contacto" class="btn btn-primary">Link</a></td>
+                </tr>
+                {{/each}}
+            </tbody>
+        </table>
+    </div>
+</div>
+
+{{!-- </div>
+</div> --}}
+{{!-- AÑADIR Modal --}}
+{{!-- /EDITAR --}}
+<form action="/update" method="post">
+    <div class="modal fade" id="EditModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel"> Editar Producto </h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" data-bs-target="#my-modal"
+                        aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group mt-3">
+                        <input type="text" name="producto_nombre" class=" form-control producto_nombre"
+                            placeholder=" Producto Nombre" required>
+                    </div>
+                    <div class="form-group mt-3">
+                        <input type="text" name="producto_precio" class=" form-control precio" placeholder="Precio"
+                            required>
+                    </div>
+                    <div class="modal-footer mt-3">
+                        <input type="hidden" name="id" class="producto_id">
+                        <button type="button" class="btn-close" data-bs-dismiss="modal" data-bs-target="#my-modal"
+                            aria-label="Close"></button>
+                        <button type="submit" class="btn btn-primary">Actualizar</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+{{!-- Modal delete --}}
+<form id="add-row-form" action="/delete" method="post">
+    <div class="modal fade" id="DeleteModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+        aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="myModalLabel">Borrar Producto</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" data-bs-target="#my-modal"
+                        aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <strong>¿Estás seguro de borrar este elemento?</strong>
+                </div>
+                <div class="modal-footer">
+                    <input type="hidden" name="producto_id" class="form-control producto_id2" required>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" data-bs-target="#my-modal"
+                        aria-label="Close"></button>
+                    <button type="submit" class="btn btn-success">Eliminar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+
+<script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+
+<script>
+    $(document).ready(function () {
+        //Mostrar datos al modal para editar registro
+        $('#mytable').on('click', '.edit', function () {
+            console.log($(this));
+            let producto_id = $(this).data('id');
+            let producto_nombre = $(this).data('producto_nombre');
+            let producto_precio = $(this).data('producto_precio');
+            $('#EditModal').modal('show');
+            $('.producto_nombre').val(producto_nombre);
+            $('.precio').val(producto_precio);
+            $('.producto_id').val(producto_id);
+        })
+        // Modal DELETE     
+        $('#mytable').on('click', '.delete', function () {
+            let producto_id = $(this).data('id');
+            $('#DeleteModal').modal('show');
+            $('.producto_id2').val(producto_id);
+
+        })
+    })
+</script>
