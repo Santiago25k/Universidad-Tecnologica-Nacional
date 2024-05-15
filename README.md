@@ -1,23 +1,42 @@
-En esta universidad hice un curso Full-Stack de aproximadamente 9 meses en donde se vieron tecnologias
-de Front-End y de Back-End
-Aprendi las bases y fundamentos de las siguientes tecnologias
 
-Front-End
--Javascrip
--HTML
--CSS
--Boostrap
--React
+En este repositorio voy a empezar un nuevo proyecto dedicandole tiempo a los frameworks y librerias que mas me gustan para poder dominarlos a la perfección​🔥​​🔥​
 
-Back-End
--NodeJS
--Express
--MySql
--MongoDB
--Angular
+💎​Me encanta mucho estudiar y trabajar del lado del backend preferentemente en servidores y bases de datos💎​
 
-Hoy en 2024 algunos de estos archivos se encuentran desactualizados por ende empezare 
-a trabajar en ellos de nuevo =)
+🔥​Back-End🔥​
+
+-NodeJS✔️​
+
+-Express✔️​
+
+-MySql✔️​
+
+-MongoDB✔️​
+
+
+⛔​Así que por obvias razones, no me esforzare tanto en el diseño.⛔​
+
+⭐Front-End⭐
+
+-Javascrip✔️​
+
+-HTML✔️​
+
+-CSS✔️​
+
+-Boostrap✔️​
+
+-React✔️​
+
+
+Sin embargo, todo conocimiento es bienvenido y no tengo problemas en seguir aprendiendo.​💯​💯​💯​
+
+💞️ <-------------------->Hi, I love the programming! @AquilesR22 <------------------------->💞​
+
+
+
+
+
 
 
     💞️ <------------------------------>Hi, I love the programming! @AquilesR22 <------------------------------>💞️
