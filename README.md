@@ -3,7 +3,7 @@ En este repositorio voy a empezar un nuevo proyecto dedicandole tiempo a los fra
 
 💎​Me encanta mucho estudiar y trabajar del lado del backend preferentemente en servidores y bases de datos💎​
 
-🔥​Back-End🔥​
+🔥​Backend🔥​
 
 -NodeJS✔️​
 
@@ -16,7 +16,7 @@ En este repositorio voy a empezar un nuevo proyecto dedicandole tiempo a los fra
 
 ⛔​Así que por obvias razones, no me esforzare tanto en el diseño.⛔​
 
-⭐Front-End⭐
+⭐Frontend⭐
 
 -Javascrip✔️​
 
