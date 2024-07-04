@@ -31,7 +31,7 @@ En este repositorio voy a empezar un nuevo proyecto dedicandole tiempo a los fra
 
 Sin embargo, todo conocimiento es bienvenido y no tengo problemas en seguir aprendiendo.​💯​💯​💯​
 
-💞️ <-------------------->Hi, I love the programming! @AquilesR22 <------------------------->💞​
+💞️ <-------------------->Hi, I love programming! @AquilesR22 <------------------------->💞​
 
 
 
