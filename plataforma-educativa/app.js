@@ -1,6 +1,12 @@
 const express = require('express');
 const dotenv = require('dotenv');
 const app = express();
+const courseRoutes = require('./routes/courseRoutes');
+const userRoutes = require('./routes/userRoutes');
+
+// Rutas
+app.use('/api/courses', courseRoutes);
+app.use('/api/users', userRoutes);
 
 //cargar variables de entorno
 dotenv.config();
