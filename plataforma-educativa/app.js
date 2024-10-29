@@ -4,6 +4,9 @@ const app = express();
 const courseRoutes = require('./routes/courseRoutes');
 const userRoutes = require('./routes/userRoutes');
 
+//conexion a la base de datos
+const db = require('./config/db');
+
 // Rutas
 app.use('/api/courses', courseRoutes);
 app.use('/api/users', userRoutes);
