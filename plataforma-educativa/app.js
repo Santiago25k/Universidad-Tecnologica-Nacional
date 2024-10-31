@@ -1,7 +1,7 @@
 const express = require('express');
 const dotenv = require('dotenv');
 const app = express();
-const courseRoutes = require('./routes/courseRoutes');
+const coursRoutes = require('./routes/coursRoutes');
 const userRoutes = require('./routes/userRoutes');
 const authRoutes = require('./routes/authRoutes');
 
@@ -12,11 +12,11 @@ const db = require('./config/db');
 //middleware para procesar JSON
 app.use(express.json());
 
-//rutas
-app.use('/api/courses', courseRoutes);
+//rutas para usar con json
+app.use('/api/cours', coursRoutes);
 app.use('/api/users', userRoutes);
 
-//rutas de autenticacion
+//ruta de autenticacion para usar con database
 app.use('/api/auth', authRoutes);
 
 
