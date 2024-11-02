@@ -4,7 +4,8 @@ CREATE TABLE Usuarios (
     apellido VARCHAR(50) NOT NULL,
     email VARCHAR(50) NOT NULL,
     pass VARCHAR(255) NOT NULL,
-    fecha_registro DATETIME DEFAULT CURRENT_TIMESTAMP
+    fecha_registro DATETIME DEFAULT CURRENT_TIMESTAMP,
+    rol ENUM('usuario', 'administrador') DEFAULT 'usuario'
 );
 
 CREATE TABLE Cursos (
