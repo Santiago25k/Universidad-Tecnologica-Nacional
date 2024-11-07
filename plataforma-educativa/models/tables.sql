@@ -2,7 +2,7 @@ CREATE TABLE Usuarios (
     id_usuario INT AUTO_INCREMENT PRIMARY KEY,
     nombre VARCHAR(50) NOT NULL,
     apellido VARCHAR(50) NOT NULL,
-    email VARCHAR(50) NOT NULL,
+    email VARCHAR(50) NOT NULL UNIQUE,
     pass VARCHAR(255) NOT NULL,
     fecha_registro DATETIME DEFAULT CURRENT_TIMESTAMP,
     rol ENUM('usuario', 'administrador') DEFAULT 'usuario'
@@ -13,26 +13,33 @@ CREATE TABLE Cursos (
     titulo VARCHAR(50) NOT NULL,
     descripcion TEXT,
     fecha_creacion DATETIME DEFAULT CURRENT_TIMESTAMP,
-    duracion INT NOT NULL
+    duracion varchar(50) NOT NULL-- Considera agregar 'unidad_duracion' si es necesario
 );
 
-create table Inscripciones (
-    id_inscripcion int AUTO_INCREMENT PRIMARY key,
-    id_usuario int not null,
-    id_curso int not null,
-    fecha_inscripcion datetime DEFAULT CURRENT_TIMESTAMP,
-    foreign key (id_usuario) references Usuarios(id_usuario),
-    foreign key (id_curso) references Cursos(id_curso)
-
+CREATE TABLE Inscripciones (
+    id_inscripcion INT AUTO_INCREMENT PRIMARY KEY,
+    id_usuario INT NOT NULL,
+    id_curso INT NOT NULL,
+    fecha_inscripcion DATETIME DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (id_usuario) REFERENCES Usuarios(id_usuario) ON DELETE CASCADE,
+    FOREIGN KEY (id_curso) REFERENCES Cursos(id_curso) ON DELETE CASCADE
 );
 
-create table Certificados (
-    id_certificado int AUTO_INCREMENT PRIMARY key,
-    id_usuario int not null,
-    id_curso int not null,
-    fecha_emision datetime DEFAULT CURRENT_TIMESTAMP,
-    foreign key (id_usuario) references Usuarios(id_usuario),
-    foreign key (id_curso) references Cursos(id_curso)
-
+CREATE TABLE Certificados (
+    id_certificado INT AUTO_INCREMENT PRIMARY KEY,
+    id_usuario INT NOT NULL,
+    id_curso INT NOT NULL,
+    fecha_emision DATETIME DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (id_usuario) REFERENCES Usuarios(id_usuario) ON DELETE CASCADE,
+    FOREIGN KEY (id_curso) REFERENCES Cursos(id_curso) ON DELETE CASCADE
 );
 
+CREATE TABLE Progresos (
+    id_progreso INT AUTO_INCREMENT PRIMARY KEY,
+    id_usuario INT NOT NULL,
+    id_curso INT NOT NULL,
+    temas_completados INT DEFAULT 0,
+    porcentaje DECIMAL(5, 2) DEFAULT 0, -- Precisión para porcentaje exacto
+    FOREIGN KEY (id_usuario) REFERENCES Usuarios(id_usuario) ON DELETE CASCADE,
+    FOREIGN KEY (id_curso) REFERENCES Cursos(id_curso) ON DELETE CASCADE
+);

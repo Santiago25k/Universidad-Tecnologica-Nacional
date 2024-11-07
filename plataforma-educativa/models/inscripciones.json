@@ -1,34 +1,16 @@
 [
   {
-    "Field": "id_inscripcion",
-    "Type": "int",
-    "Null": "NO",
-    "Key": "PRI",
-    "Default": null,
-    "Extra": "auto_increment"
-  },
-  {
-    "Field": "id_usuario",
-    "Type": "int",
-    "Null": "NO",
-    "Key": "MUL",
-    "Default": null,
-    "Extra": ""
-  },
-  {
-    "Field": "id_curso",
-    "Type": "int",
-    "Null": "NO",
-    "Key": "MUL",
-    "Default": null,
-    "Extra": ""
-  },
-  {
-    "Field": "fecha_inscripcion",
-    "Type": "datetime",
-    "Null": "YES",
-    "Key": "",
-    "Default": "CURRENT_TIMESTAMP",
-    "Extra": "DEFAULT_GENERATED"
+    "id": "1",
+    "select_type": "SIMPLE",
+    "table": "Inscripciones",
+    "partitions": null,
+    "type": "ALL",
+    "possible_keys": null,
+    "key": null,
+    "key_len": null,
+    "ref": null,
+    "rows": "1",
+    "filtered": 100,
+    "Extra": null
   }
 ]
