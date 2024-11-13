@@ -5,12 +5,15 @@ const coursesController = require('../controllers/coursesController');
 const { authAdmin } = require('../controllers/authController');
 
 
-//! Rutas
-router.get('/', coursesController.getAllCourses); //? Obtener todos los cursos
-router.get('/:id', coursesController.getCoursesById); //? Obtener curso por id
+//! Rutas de Cursos
+// /api/cursos
+router.get('/', coursesController.getAllCourses);  // Obtener todos los cursos
+router.post('/', authAdmin, coursesController.createCourses);  // Crear un nuevo curso
 
-router.post('/', authAdmin, coursesController.createCourse); //? Solo admin puede agregar nuevo curso
-router.put('/:id', authAdmin, coursesController.updateCoursesById); //? Solo admin puede actualizar curso por id
+// /api/cursos/:id_curso
+router.get('/:id', coursesController.getCoursesById);  // Obtener un curso por ID
+router.put('/:id', authAdmin, coursesController.updateCoursesById);  // Actualizar un curso por ID
+router.delete('/:id', authAdmin, coursesController.deleteCoursesById);  // Eliminar un curso por ID
 
 
 module.exports = router;
