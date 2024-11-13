@@ -43,3 +43,14 @@ CREATE TABLE Progresos (
     FOREIGN KEY (id_usuario) REFERENCES Usuarios(id_usuario) ON DELETE CASCADE,
     FOREIGN KEY (id_curso) REFERENCES Cursos(id_curso) ON DELETE CASCADE
 );
+
+
+CREATE TABLE Comentarios (
+    id_comentario INT AUTO_INCREMENT PRIMARY KEY,
+    id_usuario INT,
+    id_curso INT,
+    comentario TEXT NOT NULL,
+    fecha TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY (id_usuario) REFERENCES Usuarios(id_usuario) ON DELETE CASCADE,
+    FOREIGN KEY (id_curso) REFERENCES Cursos(id_curso) ON DELETE CASCADE
+);    
