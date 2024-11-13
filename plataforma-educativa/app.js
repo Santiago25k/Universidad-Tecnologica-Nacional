@@ -8,6 +8,8 @@ const authRoutes = require('./routes/authRoutes');
 const coursesRoutes = require('./routes/coursesRoutes');
 const suscribeRoutes= require('./routes/suscribeRoutes');
 const userProfileRoutes = require('./routes/userProfileRoutes');
+const certificateRoutes = require('./routes/certificateRoutes');
+const commentsRoutes = require('./routes/commentsRoutes');
 
 
 //conexion a la base de datos
@@ -21,11 +23,15 @@ app.use('/api/cours', coursRoutes);
 app.use('/api/users', userRoutes);
 
 //rutas  para usar con database
-app.use('/api/auth', authRoutes);
-app.use('/api/courses', coursesRoutes);
-app.get('/certificado/:id_usuario/:id_curso', coursesRoutes);
-app.post('/suscribe', suscribeRoutes);
-app.get('/perfil/:id_usuario', userProfileRoutes);
+// Rutas
+app.use('/api/auth', authRoutes);  // Autenticación
+app.use('/api/cursos', coursesRoutes);  // Cursos
+app.use('/api/comments', commentsRoutes);
+
+// Rutas mejoradas con recursos más claros
+app.get('/usr/:id_usuario/cursos/:id_curso/certificado', certificateRoutes);  // Certificado de un curso de un usuario específico
+app.get('/usr/:id_usuario/perfil', userProfileRoutes);  // Perfil de un usuario específico
+app.post('/usr/:id_usuario/suscribir', suscribeRoutes);  // Suscribir a un usuario a un curso
 
 
 //definir puerto e iniciar servidor
