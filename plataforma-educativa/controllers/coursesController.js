@@ -2,7 +2,7 @@
 
 const connection = require("../config/db");
 
-//! obtener todos los cursos
+//!Obbtener todos los cursos
 exports.getAllCourses = (req, res) => {
   const query = "SELECT * FROM cursos";
   connection.query(query, (err, results) => {
@@ -13,7 +13,7 @@ exports.getAllCourses = (req, res) => {
   });
 };
 
-//! obtener un curso por id
+//!Obtener un curso por ID
 exports.getCoursesById = (req, res) => {
   const { id } = req.params;
   const query = "SELECT * FROM Cursos WHERE id_curso = ?";
@@ -28,7 +28,7 @@ exports.getCoursesById = (req, res) => {
   });
 };
 
-//! actualizar un curso por id
+//!Actualizar un curso por id
 exports.updateCoursesById = (req, res) => {
   const { id } = req.params;
   const { titulo, descripcion, duracion } = req.body;
@@ -51,15 +51,34 @@ exports.updateCoursesById = (req, res) => {
   );
 };
 
-//! Agregar un nuevo curso
-exports.createCourse = (req, res) => {
-    const { titulo, descripcion, duracion } = req.body;
-  
-    const query = "INSERT INTO Cursos (titulo, descripcion, duracion) VALUES (?, ?, ?)";
-    connection.query(query, [titulo, descripcion, duracion], (err, results) => {
-      if (err) {
-        return res.status(500).json({ error: "Error al agregar el curso" });
-      }
-      res.status(201).json({ message: "Curso agregado con éxito", id: results.insertId });
-    });
-  };
+//!Agregar un nuevo curso
+exports.createCourses = (req, res) => {
+  const { titulo, descripcion, duracion } = req.body;
+
+  const query =
+    "INSERT INTO Cursos (titulo, descripcion, duracion) VALUES (?, ?, ?)";
+  connection.query(query, [titulo, descripcion, duracion], (err, results) => {
+    if (err) {
+      return res.status(500).json({ error: "Error al agregar el curso" });
+    }
+    res
+      .status(201)
+      .json({ message: "Curso agregado con éxito", id: results.insertId });
+  });
+};
+
+//!Borrar un curso por ID
+exports.deleteCoursesById = (req, res) => {
+  const { id } = req.params;
+
+  const query = "DELETE FROM Cursos WHERE id_curso = ?";
+  connection.query(query, [id], (err, results) => {
+    if (err) {
+      return res.status(500).json({ error: "Error al eliminar el curso" });
+    }
+    if (results.affectedRows === 0) {
+      return res.status(404).json({ message: "Curso no encontrado" });
+    }
+    res.status(200).json({ message: "Curso eliminado con éxito" });
+  });
+};
