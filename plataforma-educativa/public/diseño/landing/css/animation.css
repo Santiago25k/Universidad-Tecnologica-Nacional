@@ -1,0 +1,88 @@
+
+/*
+  *Contenedor de la nave espacial; 
+*/
+
+.scene {
+  position: fixed; /* Fijo para que siempre esté visible en la pantalla */
+  top: 0; /* Alineado al borde superior de la pantalla */
+  left: 0; /* Alineado al borde izquierdo de la pantalla */
+  width: 100vw; /* Ocupa toda el ancho de la ventana */
+  height: 100vh; /* Ocupa toda la altura de la ventana */
+  overflow: hidden; /* Evita el desplazamiento */
+  z-index: 10; /* Asegúrate de que esté por encima del fondo estrellado, pero detrás del título */
+}
+
+/*
+  *ROCKETALIEN; 
+*/
+
+.spaceship {
+  position: absolute;
+  bottom: -50px; /* Empieza fuera de la pantalla (abajo) */
+  right: -50px; /* Empieza fuera de la pantalla (derecha) */
+  animation: spaceship-move 8s linear forwards; /* Animación de la nave */
+  animation-delay: 4s; /* Retraso en la animación del rocket alien */
+}
+
+.spaceship img {
+  width: 80px; /* Ajusta el tamaño más pequeño */
+  height: auto; /* Mantiene la proporción de la imagen */
+}
+
+
+/*
+  *Animación de ROCKET ALIEN ; 
+*/
+
+@keyframes spaceship-move {
+  0% {
+    bottom: -50px; /* Empieza fuera de la pantalla (abajo) */
+    right: -50px; /* Empieza fuera de la pantalla (derecha) */
+  }
+  50% {
+    bottom: 50vh; /* Se mueve hacia el centro vertical de la pantalla */
+    right: 50vw; /* Se mueve hacia el centro horizontal de la pantalla */
+    transform: rotate(0deg); /* Opcional: vuelve a la rotación normal */
+  }
+  100% {
+    bottom: 100vh; /* Se mueve fuera de la pantalla (abajo) */
+    right: 100vw; /* Se mueve fuera de la pantalla (derecha) */
+  }
+}
+
+/*
+  *UFO; 
+*/
+
+.ufo {
+  position: absolute;
+  bottom: -30px; /* Empieza fuera de la pantalla (abajo) */
+  right: -30px; /* Empieza fuera de la pantalla (derecha) */
+  animation: ufo-move 8s linear forwards; /* Animación del UFO */
+}
+
+.ufo img {
+  width: 80px; /* Ajusta el tamaño mas pequeño */
+  height: auto; /* Mantiene la proporción de la imagen */
+}
+
+/*
+  *Animación del UFO ; 
+*/
+
+@keyframes ufo-move {
+  0% {
+    bottom: -50px; /* Empieza fuera de la pantalla (abajo) */
+    right: -50px; /* Empieza fuera de la pantalla (derecha) */
+  }
+  50% {
+    bottom: 50vh; /* Se mueve hacia el centro vertical de la pantalla */
+    right: 50vw; /* Se mueve hacia el centro horizontal de la pantalla */
+    transform: rotate(0deg); /* Opcional: vuelve a la rotación normal */
+  }
+  100% {
+    bottom: 100vh; /* Se mueve fuera de la pantalla (arriba) */
+    right: 100vw; /* Se mueve fuera de la pantalla (izquierda) */
+  }
+}

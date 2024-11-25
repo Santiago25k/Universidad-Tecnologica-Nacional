@@ -1,0 +1,773 @@
+/* Barra de desplazamiento principal */
+::-webkit-scrollbar {
+  width: 12px; /* Ancho de la barra de desplazamiento vertical */
+  height: 12px; /* Altura de la barra de desplazamiento horizontal */
+}
+
+/* Fondo de la barra de desplazamiento (pista) */
+::-webkit-scrollbar-track {
+  background: #f1f1f1; /* Color de la pista */
+  border-radius: 10px; /* Bordes redondeados */
+}
+
+/* Thumb (parte que se mueve) */
+::-webkit-scrollbar-thumb {
+  background: #010050; /* Color del thumb */
+  border-radius: 10px; /* Bordes redondeados */
+}
+
+/* Thumb cuando pasa el ratón */
+::-webkit-scrollbar-thumb:hover {
+  background: #555; /* Color del thumb al pasar el ratón */
+}
+
+body {
+  /* background-color: #000000fa; */
+  padding: 0;
+  margin: 0;
+  color: white;
+  overflow: auto;
+}
+/* 
+   *Landing Container; 
+*/
+.landing-container {
+  text-align: left;
+  height: 65vh; /* Asegura que ocupe toda la altura de la vista */
+  width: 100%;
+  padding-top: 12%;
+  /* padding-bottom: 20vh; */
+  z-index: 999; /* Asegúrate de que esté por encima de todos los elementos */
+  position: relative; /* Asegura que el z-index funcione correctamente */
+  box-shadow: 0 8px 20px rgba(3, 250, 19, 0.89);
+  background: linear-gradient(135deg, #000b6e69, #000d3da8);
+}
+
+.landing-container h2 {
+  font-size: 5vh;
+  color: #bff109; /* Color de texto */
+  /* font-weight: bold; */
+  padding-left: 9.5%;
+
+  /* box-shadow: 0 8px 20px rgba(3, 250, 19, 0.89); */
+  padding-bottom: 5vh;
+  font-family: "Arial", sans-serif;
+  font-weight: 600;
+}
+
+.landing-container p {
+  font-size: 3vh; /* Tamaño de fuente */
+  font-weight: normal;
+  font-style: normal; /* Asegura que no esté en cursiva */
+  padding-left: 9.5%; /* Ajusta el espaciado a la izquierda */
+  padding-right: 27%; /* Ajusta el espaciado a la derecha */
+  font-family: "Arial", sans-serif;
+}
+.test {
+  font-size: 8vh; /* Tamaño más grande para "Tester QA Manual" */
+  font-weight: 545; /* Opcional para resaltar */
+  color: #ffffff; /* Cambia el color si es necesario */
+  display: inline-block; /* Necesario para que el margen afecte al span */
+  margin-top: 11px;
+}
+
+/*
+ * Estilos para los fake buttóns;
+*/
+
+.button1 {
+  padding-left: 9.5%;
+}
+#slideButton1 {
+  padding: 10px 8px;
+  background-color: #bff109;
+  border-radius: 5px;
+  font-weight: 510;
+  font-size: 2.8vh;
+  border: none;
+}
+
+/* CONTENEDOR DEL BOTÓN */
+.button2 {
+  right: 7%;
+  top: 45%;
+  transform: translateY(-50%);
+  position: absolute;
+  text-align: center;
+}
+
+#slideButton2 {
+  padding: 30px 25px;
+  background-color: transparent;
+  border: 2px solid #bff109;
+  border-radius: 20px;
+  font-size: 3vh;
+  color: white;
+  display: flex;
+  flex-direction: column; /* Elementos en columna: fila principal y barra de nivel */
+  align-items: center;
+  gap: 10px;
+  position: relative;
+}
+
+.button {
+  padding-left: 9.5%;
+}
+
+#slideButton {
+  /* display: block; */
+  margin: 5vh auto;
+  padding: 15px 25px;
+  letter-spacing: 2px; /* Espaciado de letras para darle aire */
+  background-color: #ffffff;
+  font-size: 15px;
+  font-weight: bold;
+  border-radius: 1px;
+  cursor: pointer;
+  color: rgb(0, 0, 0);
+  border: 1px solid white;
+}
+
+#slideButton:hover {
+  background-color: rgba(0, 0, 0, 0); /* Verde claro casi transparente */
+  border-color: #ffffff;
+  color: white;
+}
+
+/* FILA: RELOJ, TEXTO, SIGNO DE EXCLAMACIÓN */
+.content-row {
+  display: flex;
+  align-items: center; /* Alinea verticalmente los elementos */
+  justify-content: space-between;
+  width: 100%; /* Ocupa todo el ancho del botón */
+}
+
+/* ICONO DEL RELOJ */
+.icon-left {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 10px;
+}
+
+.clock {
+  width: 20px;
+  height: 20px;
+  border: 2px solid #bff109;
+  border-radius: 50%;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.clock-face {
+  width: 4px;
+  height: 4px;
+  background-color: #bff109;
+  border-radius: 50%;
+  z-index: 2;
+}
+
+.hour-hand {
+  width: 2px;
+  height: 6px;
+  background-color: #bff109;
+  position: absolute;
+  top: 5px;
+  transform: rotate(45deg);
+  transform-origin: bottom center;
+}
+
+.minute-hand {
+  width: 1px;
+  height: 8px;
+  background-color: #bff109;
+  position: absolute;
+  top: 3px;
+  transform: rotate(90deg);
+  transform-origin: bottom center;
+}
+
+/* SIGNO DE EXCLAMACIÓN */
+
+.icon-right {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 20px;
+  height: 20px;
+  background-color: transparent;
+  border: 2px solid #bff109;
+  border-radius: 50%;
+  color: #bff109;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-left: 10px;
+}
+
+.icon-right:hover {
+  background-color: rgba(255, 255, 255, 0.2); /* Fondo al hacer hover */
+}
+
+/* BARRA DE NIVEL */
+.level-bar {
+  display: flex;
+  justify-content: flex-start;
+  gap: 4px;
+  width: 100%; /* Ocupa todo el ancho del botón */
+  padding-top: 5%;
+}
+
+.bar {
+  width: 5px;
+  height: 20px;
+  background-color: rgb(0, 131, 0);
+  border-radius: 2px;
+}
+
+.bar.green-light {
+  background-color: #bff109;
+}
+
+/* 
+   *########################### FIN Landing Container #####################################; 
+*/
+
+/*
+   *certificate container; 
+*/
+
+.imagen {
+  flex: 0.8;
+  display: flex;
+  justify-content: center; /* Centra la imagen horizontalmente */
+  align-items: center; /* Centra la imagen verticalmente */
+  z-index: 999;
+}
+
+/* Estilos para la imagen */
+.imagen img {
+  width: 65%;
+  height: auto; /* Mantiene la proporción de la imagen */
+}
+
+.certificate-container {
+  display: flex;
+  width: 100%;
+  height: 70vh;
+  background: white;
+}
+
+/* Contenedor de encabezados h2 */
+.headers-container {
+  flex: 1;
+  /* display: flex; */
+  flex-direction: column;
+
+  height: 80%;
+
+  z-index: 999;
+}
+
+/* Estilos para el H2 */
+.headers-container h2 {
+  font-family: "Arial", sans-serif;
+  font-size: 6.3vh; /* Tamaño más grande para "Tester QA Manual" */
+  font-weight: bold; /* Opcional para resaltar */
+  color: #0027d3;
+  padding-left: 17%;
+  padding-top: 6%;
+}
+
+/* Estilos para el H3 */
+.headers-container h3 {
+  font-size: 3.5vh;
+  color: black;
+  padding-left: 17%;
+  font-weight: 400;
+  letter-spacing: 1.5px;
+  word-spacing: 5px;
+  font-family: "Arial", sans-serif;
+  padding-right: 10%;
+}
+/* 
+   *########################### FIN certificate container ####################################; 
+*/
+
+/* Estilo del banner */
+.banner {
+  width: 100%;
+  height: 20vh;
+  overflow: hidden;
+  background-color: white;
+  display: flex;
+  align-items: center;
+}
+.banner-text {
+  background-color: white;
+  text-align: center;
+  padding-bottom: 2%;
+}
+.banner-span-text {
+  font-family: "Arial", sans-serif;
+  justify-content: center;
+  color: black;
+  font-size: 4vh;
+}
+/* Slider para mover los logos */
+.slider {
+  display: flex;
+  gap: 150px; /* Espacio entre íconos */
+  animation: scroll 35s linear infinite; /* Movimiento continuo */
+}
+
+.slider img {
+  height: 10vh; /* Ajusta el tamaño de los logos */
+  object-fit: contain; /* Asegura que los logos mantengan su proporción */
+}
+
+/* Animación */
+@keyframes scroll {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.banner-info {
+  background-color: white;
+  text-align: center;
+  padding-top: 5%;
+  width: 100%;
+  height: 20vh;
+}
+.banner-span-info {
+  font-family: "Arial", sans-serif;
+  justify-content: center;
+  color: rgb(19, 0, 70);
+  font-size: 6.5vh;
+  font-weight: bold;
+}
+
+/* Contenedor principal */
+.content {
+  width: 97%;
+  height: 50vh;
+  display: flex; /* Flexbox para posicionar los rectángulos */
+  justify-content: space-around; /* Espaciado igual entre los rectángulos */
+  align-items: center; /* Centrar verticalmente los rectángulos */
+  padding: 20px; /* Margen interno para evitar bordes pegados */
+  background-color: white;/* Fondo claro para contraste */
+  position: relative; /* Necesario para posicionar los elementos absolutos */
+  overflow: hidden; /* Oculta elementos que sobresalgan */
+}
+
+/* Estilo común para los rectángulos */
+.rectangle {
+  width: 35%; /* Cada rectángulo ocupa un 45% del ancho */
+  height: 50%; /* Altura relativa dentro del contenedor */
+  background-color: white;
+  border: 2px solid #ddd; /* Borde sutil */
+  border-radius: 8px; /* Bordes redondeados */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra suave */
+  padding: 20px;
+  padding-top: 0;
+  position: relative; /* Asegura que estén sobre los decorativos */
+  z-index: 999;
+}
+
+.rectangle ul {
+  list-style-type: disc; /* Lista con puntos */
+  padding-left: 20px; /* Indentación para la lista */
+}
+
+.rectangle ul li {
+  margin-bottom: 10px;
+  font-size: 3.5vh;
+  color: #555;
+  font-weight: none;
+}
+
+/* Fondo diferente para los rectángulos */
+.left {
+  background-color: #e8f5e9; /* Verde claro */
+}
+
+.right {
+  background-color: #e3f2fd; /* Azul claro */
+}
+
+/* Estilo para los rectángulos decorativos */
+.decorative-rect {
+  position: absolute;
+  background-color: rgba(0, 0, 255, 0.1); /* Azul translúcido */
+  border: 2px solid rgba(0, 0, 255, 0.2); /* Borde suave */
+  border-radius: 10px; /* Opcional para bordes redondeados */
+  z-index: 0; /* Asegura que estén detrás del contenido principal */
+}
+
+/* Tamaño y posición de los decorativos */
+.decorative-rect:nth-child(1) {
+  width: 300px;
+  height: 150px;
+  top: 10%;
+  left: 5%;
+}
+
+.decorative-rect:nth-child(2) {
+  width: 200px;
+  height: 100px;
+  top: 40%;
+  left: 25%;
+}
+
+.decorative-rect:nth-child(3) {
+  width: 350px;
+  height: 200px;
+  bottom: 5%;
+  right: 10%;
+  background-color: rgba(255, 0, 0, 0.1); /* Rojo translúcido */
+  border: 2px solid rgba(255, 0, 0, 0.2);
+}
+
+.decorative-rect:nth-child(4) {
+  width: 250px;
+  height: 120px;
+  top: 10%;
+  right: 5%;
+  background-color: rgba(0, 255, 0, 0.1); /* Verde translúcido */
+  border: 2px solid rgba(0, 255, 0, 0.2);
+}
+
+/* Estilo del contenedor */
+.button-container {
+  width: 100%;
+  height: 30vh;
+  display: flex;
+  justify-content: center; /* Alinea los botones en el centro */
+  align-items: center;
+  gap: 40px; /* Ajusta este valor para el espacio entre botones */
+  background-color: #f0f0f0;
+}
+
+/* Estilo de los botones */
+.btn-left {
+  padding: 18px 33px;
+  background-color: #040029;
+  color: white;
+  border: 1px solid transparent; /* Borde predefinido transparente */
+  border-radius: 1px;
+  cursor: pointer;
+  font-size: 2.5vh;
+  transition: background-color 0.5s, border-color 0.5s, color 0.5s; /* Transiciones suaves */
+  font-weight: 600;
+}
+
+.btn-left:hover {
+  background-color: #ffffff; /* Cambia el color al pasar el cursor */
+  color: black;
+  border-color: black; /* Cambia solo el color del borde */
+}
+
+.btn-right {
+  padding: 18px 33px;
+  background-color: white;
+  color: black;
+  border: 1px solid black; /* Borde predefinido */
+  border-radius: 1px;
+  cursor: pointer;
+  font-size: 2.5vh;
+  transition: background-color 0.3s, color 0.3s; /* Transiciones suaves */
+  font-weight: 600;
+}
+
+.btn-right:hover {
+  background-color: #040029; /* Cambia el color al pasar el cursor */
+  color: white;
+  border-color: black; /* El borde no se altera visualmente */
+}
+
+/* */.requisitos-container */
+.requisitos-container {
+  display: flex;
+  flex-direction: column;
+  width: 100vh;
+}
+
+
+.requisitos-headers-container h2 {
+  font-family: "Arial", sans-serif;
+  font-size: 6.3vh; 
+  font-weight: bold;
+  color: rgb(9, 0, 59);
+  padding-left: 9.3%;
+}
+
+.requisitos-headers-container h3 {
+  font-size: 3.5vh;
+  color: black;
+  padding-left: 9.3%;
+  font-weight: 400;
+  letter-spacing: 1.5px;
+  word-spacing: 5px;
+  font-family: "Arial", sans-serif;
+  padding-right: 10%;
+  padding-top: 0;
+}
+
+.container-study-plan {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 100%;
+  font-family: Arial, sans-serif;
+  padding: 20px;
+  box-sizing: border-box;
+  padding-top: 10%;
+  padding-left: 9.3%;
+}
+
+.study-plan {
+  flex: 1; /* Ocupa el espacio disponible a la izquierda */
+  max-width: 50%;
+}
+
+.study-plan h2 {
+  text-align: left;
+  margin-bottom: 20px;
+  color: rgb(27, 11, 252);
+  font-size: 6.3vh;
+  font-weight: bold;
+  /* padding-left: 10%; */
+  padding-bottom: 5%;
+}
+
+.accordion-item {
+  margin-bottom: 10px;
+}
+
+.accordion-header {
+  width: 100%;
+  background-color: white;
+  /* border-top: 1px solid black;  */
+  /* border-bottom: 1px solid black;  */
+  border-bottom: none;
+  border-left: none; 
+  border-right: none; 
+
+  padding: 15px;
+  text-align: left;
+  font-size: 3.7vh;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 0;
+}
+
+.accordion-header:hover {
+ 
+  border-color: blue; /* Cambiar el borde a azul */
+}
+.accordion-header.open {
+  border-color: blue; /* Cambiar el borde cuando el acordeón está abierto */
+  border-bottom: none; 
+}
+.accordion-content {
+  max-height: 0; /* Inicialmente colapsado */
+  overflow: hidden; /* Oculta el contenido excedente */
+  transition: max-height 0.5s ease-out; /* Animación suave para expandir y contraer */
+}
+
+.imagen-course {
+  flex: 1; /* Ocupa el espacio disponible a la derecha */
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.imagen-course img {
+  width: 65%;
+  padding-top: 20%;
+  height: auto;
+ 
+}
+
+ul li {
+  color: black;
+  font-size: 3vh;
+  margin-bottom: 8px;
+  padding-left: 20px;
+  list-style-type: disc; 
+}
+
+.accordion-header .plus {
+  transition: transform 0.5s ease; 
+  color: blue;
+  font-size: 6vh;
+}
+
+.accordion-header.open .plus {
+  transform: rotate(360deg);
+}
+
+.headers-container ul {
+  list-style-type: none;
+  margin: 20px 0;
+  padding-left: 18%;
+}
+
+.headers-container ul li {
+  margin-bottom: 15px; 
+  padding: 10px; 
+  background: #f7f7f7; 
+  border-left: 4px solid #2196f3; 
+  border-radius: 5px; 
+  font-size: 3.5vh; 
+  color: #333; 
+}
+
+.imagen-learning{
+  padding-top: 8%;
+  padding-left: 10%;
+}
+
+
+.payment-container {
+  display: flex;
+  flex-direction: column; /* Alinea verticalmente el contenido */
+  justify-content: center; /* Centra verticalmente */
+  align-items: center; /* Centra horizontalmente */
+  height: 60vh; /* Ocupa toda la altura de la pantalla */
+  width: 100%; /* Ocupa toda la anchura de la pantalla */
+  background-color: white;
+  padding-top: 0;
+  /* box-shadow: 0 8px 20px red; */
+}
+
+.payment-info {
+  background: #dadcff56; /* Fondo semitransparente */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Sombra moderna */
+  border-radius: 30px; 
+  width: 80%; 
+  max-width: 500px;
+  text-align: center; 
+  color: #333;
+}
+
+.payment-info h2 {
+  font-size: 8vh;
+  color: #2196f3; /* Color principal */
+  margin-bottom: 10px;
+}
+
+.price {
+  font-size: 6vh;
+  color: black;
+  margin-bottom: 20px;
+}
+
+.old-price {
+  text-decoration: line-through;
+  color: #888;
+}
+
+.new-price {
+  font-weight: bold;
+  color: #e53935; /* Rojo llamativo */
+}
+
+.button-container-center {
+  margin-top: 20px;
+}
+
+.btn-center {
+  padding: 18px 33px;
+  background-color: #040029;
+  color: white;
+  border: 1px solid transparent; /* Borde predefinido transparente */
+  border-radius: 1px;
+  cursor: pointer;
+  font-size: 2.5vh;
+  transition: background-color 0.5s, border-color 0.5s, color 0.5s; /* Transiciones suaves */
+  font-weight: 600;
+}
+
+.btn-center:hover {
+  background-color: #ffffff; /* Cambia el color al pasar el cursor */
+  color: black;
+  border-color: black; /* Cambia solo el color del borde */
+}
+
+
+.comments-section {
+  max-width: 400px;
+  margin: 50px auto;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border: 1px solid #ddd;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.comments-section h2 {
+  font-size: 24px;
+  margin-bottom: 15px;
+  color: #333;
+}
+
+.comment-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.comment-input {
+  width: 90%;
+  padding: 15px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 16px;
+  resize: none;
+}
+
+.comment-submit {
+  background-color: #2196f3;
+  color: white;
+  font-size: 16px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.comments-display {
+  margin-top: 30px;
+  text-align: left;
+}
+
+.comments-display h3 {
+  font-size: 20px;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.comments-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.comments-list li {
+  background: #f0f0f0;
+  margin-bottom: 10px;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
