@@ -1,0 +1,42 @@
+[
+  {
+    "Field": "id_progreso",
+    "Type": "int",
+    "Null": "NO",
+    "Key": "PRI",
+    "Default": null,
+    "Extra": "auto_increment"
+  },
+  {
+    "Field": "id_usuario",
+    "Type": "int",
+    "Null": "NO",
+    "Key": "MUL",
+    "Default": null,
+    "Extra": ""
+  },
+  {
+    "Field": "id_curso",
+    "Type": "int",
+    "Null": "NO",
+    "Key": "MUL",
+    "Default": null,
+    "Extra": ""
+  },
+  {
+    "Field": "temas_completados",
+    "Type": "int",
+    "Null": "YES",
+    "Key": "",
+    "Default": "0",
+    "Extra": ""
+  },
+  {
+    "Field": "porcentaje",
+    "Type": "decimal(5,2)",
+    "Null": "YES",
+    "Key": "",
+    "Default": "0.00",
+    "Extra": ""
+  }
+]

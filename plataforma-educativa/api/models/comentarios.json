@@ -1,0 +1,42 @@
+[
+  {
+    "Field": "id_comentario",
+    "Type": "int",
+    "Null": "NO",
+    "Key": "PRI",
+    "Default": null,
+    "Extra": "auto_increment"
+  },
+  {
+    "Field": "id_usuario",
+    "Type": "int",
+    "Null": "YES",
+    "Key": "MUL",
+    "Default": null,
+    "Extra": ""
+  },
+  {
+    "Field": "id_curso",
+    "Type": "int",
+    "Null": "YES",
+    "Key": "MUL",
+    "Default": null,
+    "Extra": ""
+  },
+  {
+    "Field": "comentario",
+    "Type": "text",
+    "Null": "NO",
+    "Key": "",
+    "Default": null,
+    "Extra": ""
+  },
+  {
+    "Field": "fecha",
+    "Type": "timestamp",
+    "Null": "YES",
+    "Key": "",
+    "Default": "CURRENT_TIMESTAMP",
+    "Extra": "DEFAULT_GENERATED"
+  }
+]

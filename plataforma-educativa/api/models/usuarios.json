@@ -1,0 +1,58 @@
+[
+  {
+    "Field": "id_usuario",
+    "Type": "int",
+    "Null": "NO",
+    "Key": "PRI",
+    "Default": null,
+    "Extra": "auto_increment"
+  },
+  {
+    "Field": "nombre",
+    "Type": "varchar(50)",
+    "Null": "NO",
+    "Key": "",
+    "Default": null,
+    "Extra": ""
+  },
+  {
+    "Field": "apellido",
+    "Type": "varchar(50)",
+    "Null": "NO",
+    "Key": "",
+    "Default": null,
+    "Extra": ""
+  },
+  {
+    "Field": "email",
+    "Type": "varchar(50)",
+    "Null": "NO",
+    "Key": "UNI",
+    "Default": null,
+    "Extra": ""
+  },
+  {
+    "Field": "pass",
+    "Type": "varchar(255)",
+    "Null": "NO",
+    "Key": "",
+    "Default": null,
+    "Extra": ""
+  },
+  {
+    "Field": "fecha_registro",
+    "Type": "datetime",
+    "Null": "YES",
+    "Key": "",
+    "Default": "CURRENT_TIMESTAMP",
+    "Extra": "DEFAULT_GENERATED"
+  },
+  {
+    "Field": "rol",
+    "Type": "enum('usuario','administrador')",
+    "Null": "YES",
+    "Key": "",
+    "Default": "usuario",
+    "Extra": ""
+  }
+]
