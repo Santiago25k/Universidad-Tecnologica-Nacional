@@ -1,0 +1,130 @@
+/* 
+ *BARRA DE NAVEGACION; 
+*/
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #ffffff;
+  width: 100%;
+  padding: 1.5vh 3vh;
+  position: fixed;
+  /* top: 0; */
+  z-index: 1000;
+  /* padding-top: 5vh; */
+}
+
+.navbar .logo h1 {
+  color: rgb(25, 1, 243);
+  font-size: 5.5vh;
+  margin: 0;
+  align-items: center;
+}
+
+.nav-links {
+  list-style-type: none;
+  display: flex;
+  margin: 0;
+  padding: 0;
+  margin-right: 9vh;
+  
+}
+
+.nav-links li {
+  margin-left: 10vh;
+  list-style-type: none !important; /* Elimina las viñetas */
+
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: rgb(0, 0, 0);
+  padding: 1vh 2vh;
+  font-size: 3vh;
+}
+
+.nav-links a:hover {
+  border-bottom: 3px solid #0db667; /* Línea debajo del enlace */
+}
+
+/* Estilos para el menú de hamburguesa */
+.hamburger {
+  display: none; /* Ocultar por defecto */
+  flex-direction: column;
+  cursor: pointer;
+  z-index: 1001; /* Asegura que esté por encima de otros elementos */
+  padding-right: 5vh;
+}
+
+.hamburger div {
+  width: 2.5em;
+  height: 0.5em;
+  background-color: rgba(28, 191, 99, 0.651);
+  margin: 0.2em;
+  transition: all 0.3s ease;
+  margin-right: 1em;/* **/
+}
+
+/* Estilos para la navegación en dispositivos pequeños */
+@media (max-width: 768px) {
+  
+  .nav-links {
+    display: none; /* Ocultar enlaces de navegación por defecto */
+    flex-direction: column; /* Alinear los enlaces en columna */
+    justify-content: center; /* Centrar los enlaces verticalmente */
+    align-items: center; /* Centrar los enlaces horizontalmente */
+    position: absolute; /* Hacer que el menú sea absoluto */
+    top: 10vh; /* Alinear debajo de la barra de navegación */
+    
+    left: 0;
+    right: 0;
+    background-color: #000000dc; /* Color de fondo */
+    
+  }
+
+  .nav-links a {
+    text-decoration: none;
+    color: white;
+    padding: 2vh 0;
+    font-size: 3vh; /* Ajustar el tamaño de los enlaces */
+    text-align: center; /* Centrar el texto dentro de los enlaces */
+  }
+
+  .nav-links li {
+    padding: 2vh 0; 
+    width: 100%; 
+    display: flex;
+    justify-content: center; 
+    margin-left: auto;
+  }
+
+  .nav-links.active {
+    display: flex; /* Mostrar los enlaces de navegación al activar */
+    /* padding: 30px; */
+    width: 90%;
+    
+  }
+
+  .navbar .logo h1 {
+    font-size: 3.5vh; /* Reducir tamaño del logo en móvil */
+  }
+
+  .hamburger {
+    display: flex; /* Mostrar el menú de hamburguesa */
+  }
+}
+
+/* Estilo de la transición al abrir/cerrar el menú */
+.nav-links.active {
+  animation: slideDown 0.6s ease; /* Animación de aparición */
+}
+
+@keyframes slideDown {
+  from {
+    max-height: 0; /* Iniciar con altura 0 */
+  }
+  to {
+    max-height: 500px; /* Altura máxima del menú */
+  }
+}
+

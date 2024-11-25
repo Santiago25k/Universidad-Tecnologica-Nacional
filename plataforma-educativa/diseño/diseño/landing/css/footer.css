@@ -1,0 +1,86 @@
+/* Estilo del contenedor del footer */
+.footer-container {
+  position: relative;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+  overflow: hidden;
+  background-color: #000000b1;
+  z-index: 999;
+}
+
+.footer-container ul {
+  display: flex;
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+  justify-content: center; /* Centra los íconos y el texto */
+}
+
+.footer-container li {
+  margin: 20px;
+  font-size: 4vh;
+  padding: 1vh;
+}
+
+.footer-container a {
+  color: #fff;
+  text-decoration: none;
+  display: flex;
+  flex-direction: column;
+}
+
+.icon-footer {
+  width: 20vh; /* Ajusta el tamaño de las imágenes */
+  height: auto;
+}
+
+/* Ajusta el contenedor del texto del enlace */
+.footer-container li:last-child {
+  margin-left: auto; /* Empuja el texto a la derecha */
+  text-align: right; /* Alinea el texto a la derecha */
+  padding: 5.8vh;
+}
+
+
+/* Ocultar en dispositivos móviles por defecto */
+.mobile-only {
+  display: none;
+}
+
+/* Ocultar en pantallas grandes por defecto */
+.desktop-only {
+  display: block;
+}
+
+/* Media Query para pantallas pequeñas */
+@media (max-width: 768px) {
+  .mobile-only {
+    display: block;
+  }
+  .desktop-only {
+    display: none;
+  }
+  
+  .footer-container li {
+    /* display: none; */
+    text-align: center;
+    margin: 0;
+    padding: 0;
+  }
+
+  .footer-container ul {
+    display: block;
+  }
+
+  .icon-footer {
+    width: 20vh; 
+  }
+
+  .footer-container li:last-child {
+    margin: 0; 
+    text-align: center; 
+    padding: 5vh; 
+    /* display: none; */
+  }
+}
