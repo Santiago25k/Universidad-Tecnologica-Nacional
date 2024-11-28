@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="google" content="notranslate" />
+    <title>Tester QA</title>
+    <link href=./img/circular_qualityassurance.png rel=icon type=image/x-icon>
+    <link rel="stylesheet" href="./css/spacestars.css" />
+    <link rel="stylesheet" href="./css/index.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@400&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./css/navbar.css" />
+  </head>
+  <body>
+    <div id="top"></div>
+    <!-- Asegurate de que esté al principio y sin estilo adicional -->
+
+    <!-- Barra de navegacion -->
+    <header>
+      <nav class="navbar">
+        <div class="logo">
+          <h1>cursosIT</h1>
+        </div>
+        <div class="hamburger" id="hamburger">
+          <div></div>
+          <div></div>
+          <div></div>
+        </div>
+        <ul class="nav-links" id="nav-links">
+          <li><a href="./routes/testingqa.html">Testing</a></li>
+          <li><a href="#top">Inicio</a></li>
+          <li><a href="https://github.com/Santiago25k">Github</a></li>
+          <li>
+            <a
+              href="https://www.linkedin.com/in/santiago-ercoles-b40b29331?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+              >Linkedin</a
+            >
+          </li>
+          <li><a href="#contacto">Contacto</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- landing-container -->
+    <div class="landing-container">
+      <div class="button1">
+        <a href="">
+          <button id="slideButton1">Curso Online</button>
+        </a>
+      </div>
+      <h2 class="desktop-only">
+        Curso de <br /><span class="test">Tester QA Manual</span>
+      </h2>
+
+      <div class="button2">
+        <button id="slideButton2">
+          <div class="content-row">
+            <div class="icon-left">
+              <div class="clock">
+                <div class="clock-face"></div>
+                <div class="hour-hand"></div>
+                <div class="minute-hand"></div>
+              </div>
+            </div>
+            <span style="font-size: large">Duración: 25 horas</span>
+            <!-- Botón para abrir el popup -->
+            <div class="icon-right" onclick="showInfo()">
+              <span>!</span>
+            </div>
+          </div>
+          <div class="level-bar">
+            <div class="bar green-light"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <span style="font-size: large">Nivel: Principiante</span>
+          </div>
+        </button>
+        <!-- Popup -->
+        <div class="overlay" id="overlay"></div>
+
+        <!-- <div class="info-popup" id="infoPopup">
+          <span class="close-btn" onclick="closePopup()">&times;</span>
+          <p>
+            Este curso es adecuado para principiantes interesados en QA Manual.
+          </p>
+          <button class="agree-btn" onclick="closePopup()">De acuerdo</button>
+        </div> -->
+      </div>
+
+      <p>
+        Construye planes de prueba eficientes para el Desarrollo de Software y
+        garantiza la calidad de los procesos a la hora de crear productos IT.
+        Conoce las herramientas y técnicas más utilizadas.
+      </p>
+      <!-- Botón de llamada a la acción -->
+
+      <div class="button">
+        <a href="#mas-informacion">
+          <button id="slideButton">Ver Curso</button>
+        </a>
+      </div>
+    </div>
+    <!-- Fin Landing Container -->
+
+    <div class="mas-informacion" id="mas-informacion"></div>
+
+    <!-- certficate Container -->
+    <div class="certificate-container">
+      <div class="headers-container">
+        <h2>Certifica tus conocimientos</h2>
+
+        <h3>
+          Tu certificado de CursosIT está respaldado por las más de 9.000
+          empresas que confían en nosotros para capacitar y reclutar a sus
+          colaboradores, en todo LATAM.
+        </h3>
+      </div>
+      <div class="imagen">
+        <img
+          src="./img/certificate-approval-boilerplate.svg"
+          alt="astronauta testing"
+        />
+      </div>
+    </div>
+    <!-- certficate Container  -->
+
+    <div class="banner-text">
+      <span class="banner-span-text">Somos el nexo para tu trabajo ideal</span>
+    </div>
+
+    <div class="banner">
+      <div class="slider">
+        <img
+          src="https://upload.wikimedia.org/wikipedia/commons/4/4a/Logo_2013_Google.png"
+          alt="Google"
+        />
+        <img
+          src="https://upload.wikimedia.org/wikipedia/commons/f/fa/Apple_logo_black.svg"
+          alt="Apple"
+        />
+        <img src="./img/accenture-6.svg" alt="" srcset="" />
+        <img src="./img/carrefour-1999-20-.svg" alt="" srcset="" />
+        <img src="./img/ibm.svg" alt="" srcset="" />
+        <img src="./img/mcdonalds-5.svg" alt="" srcset="" />
+        <img src="./img/microsoft-6.svg" alt="" srcset="" />
+        <img src="./img/logo-amazon.svg" alt="" srcset="" />
+        <img src="./img/lenovo-2.svg" alt="" srcset="" />
+        <img src="./img/icbc-pure-square.svg" alt="" srcset="" />
+      </div>
+    </div>
+    <div class="banner-info">
+      <span class="banner-span-info">En este curso aprenderás</span>
+    </div>
+
+    <div class="content">
+      <!-- Rectángulos decorativos -->
+      <div class="decorative-rect"></div>
+      <div class="decorative-rect"></div>
+      <div class="decorative-rect"></div>
+      <div class="decorative-rect"></div>
+      <div class="rectangle left">
+        <ul>
+          <li>Fundamentos de la Calidad del Software.</li>
+          <li>Tipos y técnicas de pruebas.</li>
+          <li>Procesos de testing.</li>
+          <li>Cómo planificar, ejecutar y reportar pruebas.</li>
+        </ul>
+      </div>
+      <div class="rectangle right">
+        <ul>
+          <li>Evaluación de procesos y productos.</li>
+          <li>Identificación y reporte de errores.</li>
+          <li>Herramientas avanzadas QA.</li>
+          <li>Automatización de pruebas.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="button-container">
+      <button class="btn-left">Quiero inscribirme</button>
+      <button class="btn-right">Descargar plan de estudio</button>
+    </div>
+
+    <!-- requisitos Container -->
+    <div class="requisitos-container">
+      <div class="requisitos-headers-container">
+        <h2>Requisitos previos</h2>
+
+        <h3>
+          <b>Conocimientos:</b> No se necesita experiencia previa ni
+          conocimientos técnicos.
+        </h3>
+      </div>
+    </div>
+
+    <!-- FIN requisitos Container  -->
+
+    <div class="container-study-plan">
+      <div class="study-plan">
+        <h2>Plan de Estudio</h2>
+        <div class="accordion-item">
+          <button class="accordion-header">
+            Conceptos de calidad <span class="plus">+</span>
+          </button>
+          <div class="accordion-content">
+            <ul>
+              <li>Atributos de calidad.</li>
+              <li>Normas y estándares.</li>
+              <li>Conceptos de testing.</li>
+              <li>Fundamentos del testing.</li>
+              <li>Tipos y técnicas de pruebas.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <button class="accordion-header">
+            Conceptos de casos de prueba <span class="plus">+</span>
+          </button>
+          <div class="accordion-content">
+            <ul>
+              <li>Atributos de un caso de prueba.</li>
+              <li>Matriz de trazabilidad y tips.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <button class="accordion-header">
+            Conceptos de defectos <span class="plus">+</span>
+          </button>
+          <div class="accordion-content">
+            <ul>
+              <li>Atributos del defecto.</li>
+              <li>Causa y raiz del bug.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <button class="accordion-header">
+            Conceptos de automatización <span class="plus">+</span>
+          </button>
+          <div class="accordion-content">
+            <ul>
+              <li>Creación de un script automatizado y ejecución.</li>
+              <li>Scripting bajo Selenium IDE.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <button class="accordion-header">
+            Test de Perfomance <span class="plus">+</span>
+          </button>
+          <div class="accordion-content">
+            <ul>
+              <li>Test de carga.</li>
+              <li>Test de stress.</li>
+              <li>Plan de pruebas no funcionales.</li>
+              <li>Pruebas bajo JMeter.</li>
+            </ul>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <button class="accordion-header">
+            Conceptos de proyectos <span class="plus">+</span>
+          </button>
+          <div class="accordion-content">
+            <ul>
+              <li>Riesgos, ambiente.</li>
+              <li>Estrategias y estimaciones.</li>
+              <li>Plan de pruebas.</li>
+              <li>KPI e informes.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="imagen-course">
+        <img src="./img/course-syllabus-vector.svg" alt="astronauta testing" />
+      </div>
+    </div>
+
+    <div class="certificate-container">
+      <div class="imagen-learning">
+        <img
+          src="./img/base-learning-guarantee-vector.svg"
+          alt="astronauta testing"
+        />
+      </div>
+      <div class="headers-container">
+        <h2>Garantia de aprendizaje</h2>
+        <h3>
+          Tu aprendizaje es importante. ¡Repasa y refuerza cuando lo necesites!
+        </h3>
+        <ul>
+          <li>Toma nuevamente el curso de manera gratuita.</li>
+          <li>Recupera las clases que no pudiste asistir.</li>
+          <li>Refuerza tu conocimiento con nuevos recursos disponibles.</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="certificate-container">
+      <div class="headers-container">
+        <h2>Plataforma Propia</h2>
+        <h3>
+          Accede a las clases en vivo y al material adicional de estudio a través de nuestra plataforma virtual.
+        </h3>
+        <ul>
+          <li>Suma ITCréditos y canjéalos por cursos.</li>
+          <li>Realiza los exámenes desde tu casa y certifícate..</li>
+          <li>Mantente conectado con la comunidad.</li>
+        </ul>
+      </div>
+      <div class="imagen">
+        <img
+          src="./img/base-learning-guarantee-vector.svg"
+          alt="astronauta testing"
+        />
+      </div>
+    </div>
+
+
+    <div class="payment-container">
+      <div class="payment-info">
+        <h2>Precio</h2>
+        <p class="price">
+          <span class="old-price">U$D 9.99</span> 
+          <span class="new-price">FREE</span>
+      </div>
+      <div class="button-container-center">
+        <button class="btn-center">Quiero inscribirme</button>
+        <!-- <button class="btn-right">Descargar plan de estudio</button> -->
+      </div>
+    </div>
+
+    <div class="comments-section">
+      <h2>Deja tu comentario</h2>
+      <form class="comment-form">
+        <textarea 
+          class="comment-input" 
+          placeholder="Escribe tu comentario aquí..." 
+          rows="4" 
+          required>
+        </textarea>
+        <button type="submit" class="comment-submit">Enviar comentario</button>
+      </form>
+      <div class="comments-display">
+        <h3>Comentarios:</h3>
+        <ul class="comments-list">
+          <!-- Los comentarios se agregarán aquí -->
+        </ul>
+      </div>
+    </div>
+    
+    
+
+    <!-- Scripts -->
+    <!-- <script src="./js/spacestarsV2.js" defer></script> -->
+
+    <script>
+      document.querySelectorAll(".accordion-header").forEach((button) => {
+        button.addEventListener("click", () => {
+          // Cierra todos los contenidos abiertos excepto el clicado
+          document.querySelectorAll(".accordion-content").forEach((content) => {
+            if (content !== button.nextElementSibling) {
+              // Cierra el contenido con una transición suave
+              content.style.maxHeight = null;
+              content.previousElementSibling.querySelector(
+                ".plus"
+              ).textContent = "+";
+              // Remueve la clase 'open' de otros botones
+              content.previousElementSibling.classList.remove("open");
+            }
+          });
+
+          // Alterna el contenido del módulo clicado
+          const content = button.nextElementSibling;
+          const isOpen = content.style.maxHeight;
+
+          if (isOpen) {
+            // Si está abierto, cierra el acordeón
+            content.style.maxHeight = null;
+            button.querySelector(".plus").textContent = "+";
+            // Remueve la clase 'open' para que no rote cuando se cierra
+            button.classList.remove("open");
+          } else {
+            // Si está cerrado, abre el acordeón
+            content.style.maxHeight = content.scrollHeight + "px"; // Se ajusta al contenido
+            button.querySelector(".plus").textContent = "-";
+            // Añade la clase 'open' para aplicar la rotación al abrir
+            button.classList.add("open");
+          }
+        });
+      });
+
+      document.querySelector('.comment-form').addEventListener('submit', function (e) {
+  e.preventDefault(); // Evita el envío del formulario y el recargo de la página
+
+  // Obtiene el texto del área de comentarios
+  const commentInput = document.querySelector('.comment-input');
+  const commentText = commentInput.value.trim();
+
+  if (commentText) {
+    // Crea un nuevo elemento de lista
+    const commentItem = document.createElement('li');
+    commentItem.textContent = commentText;
+
+    // Agrega el nuevo comentario a la lista
+    const commentsList = document.querySelector('.comments-list');
+    commentsList.appendChild(commentItem);
+
+    // Limpia el área de texto
+    commentInput.value = '';
+  }
+});
+    </script>
+
+    <!-- Google Analytics(gtag.js) -->
+  </body>
+</html>
