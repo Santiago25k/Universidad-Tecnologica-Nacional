@@ -1,5 +1,6 @@
 const express = require('express');
 const dotenv = require('dotenv');
+const cors = require('cors');
 
 const app = express();
 const coursRoutes = require('./routes/coursRoutes');
@@ -11,6 +12,15 @@ const userProfileRoutes = require('./routes/userProfileRoutes');
 const certificateRoutes = require('./routes/certificateRoutes');
 const commentsRoutes = require('./routes/commentsRoutes');
 
+// Configurar CORS para permitir solicitudes desde el frontend
+app.use(cors({
+    origin: 'http://localhost:5173', // Reemplaza con la URL de tu frontend
+  }));
+  
+  // Ejemplo de un endpoint
+  app.get('/api/saludo', (req, res) => {
+    res.json({ mensaje: 'Hola desde el backend!' });
+  });
 
 //conexion a la base de datos
 const db = require('./config/db');
