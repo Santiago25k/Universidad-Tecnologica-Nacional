@@ -6,6 +6,7 @@ import { faEye, faEyeSlash } from "@fortawesome/free-solid-svg-icons"; // Import
 import { Link } from "react-router-dom";
 import { initSpaceStars } from "./scripts/spacestarsV2"; 
 
+
 import { useNavigate } from "react-router-dom";
 
 const Login = () => {
@@ -64,6 +65,7 @@ const Login = () => {
 
   return (
     <div>
+     
       {/* Fondo estrellado */}
       <div className="container">
         <div className="space space-1"></div>
@@ -71,7 +73,7 @@ const Login = () => {
         <div className="space space-3"></div>
         <div className="meteor"></div>
       </div>
-
+       
       <div className="form-container">
         <form className="auth-form" id="auth-form" onSubmit={handleSubmit}>
           <h2 className="form-title">Iniciar Sesión</h2>
@@ -113,6 +115,7 @@ const Login = () => {
             ¿No tienes cuenta? <Link to= "/register">Regístrate aquí</Link>
           </p>
         </form>
+       
       </div>
     </div>
   );

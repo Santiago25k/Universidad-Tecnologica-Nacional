@@ -1,17 +1,17 @@
 import React from "react";
 import { Outlet } from "react-router-dom";
+import NavBar from "../components/navbar/NavBar";
 
 const Layout = () => {
   return (
     <div>
-      <header>
-        <h1>Plataforma de Cursos</h1>
-      </header>
+      <NavBar />
       <main>
-        <Outlet /> {/* Aquí se renderizan las rutas hijas */}
+        <Outlet />
       </main>
     </div>
   );
 };
+
 
 export default Layout;

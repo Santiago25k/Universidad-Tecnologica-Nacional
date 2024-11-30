@@ -10,6 +10,7 @@ import Register from "./pages/authentication/Register";
 import Home from "./pages/Home";
 import Profile from "./pages/Profile";
 import Layout from "./components/Layout";
+import Dashboard from "./pages/dashboard/Dashboard";
 
 //* Ruta protegida
 const ProtectedRoute = ({ children }) => {
@@ -39,12 +40,17 @@ const router = createBrowserRouter([
         path: "/profile/:id", // Página de perfil del usuario
         element: <Profile />,
       },
+      {
+        path: "/dashboard",
+        element: <Dashboard />,
+      },
     ],
   },
   {
     path: "/login", // Página de inicio de sesión
     element: <Login />,
   },
+
   {
     path: "/register", // Página de registro
     element: <Register />,
