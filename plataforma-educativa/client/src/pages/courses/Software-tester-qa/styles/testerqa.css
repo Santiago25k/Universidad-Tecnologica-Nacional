@@ -1,0 +1,234 @@
+::-webkit-scrollbar {
+  width: 12px; /* Ancho de la barra de desplazamiento vertical */
+  height: 12px; /* Altura de la barra de desplazamiento horizontal */
+}
+
+/* Fondo de la barra de desplazamiento (pista) */
+::-webkit-scrollbar-track {
+  background: #f1f1f1; /* Color de la pista */
+  border-radius: 10px; /* Bordes redondeados */
+}
+
+/* Thumb (parte que se mueve) */
+::-webkit-scrollbar-thumb {
+  background: #010050; /* Color del thumb */
+  border-radius: 10px; /* Bordes redondeados */
+}
+
+/* Thumb cuando pasa el ratón */
+::-webkit-scrollbar-thumb:hover {
+  background: #555; /* Color del thumb al pasar el ratón */
+}
+
+body {
+  /* background-color: #fffbfbfa; */
+  padding: 0;
+  margin: 0;
+  color: white;
+  overflow: auto;
+}
+
+.landing-container {
+  text-align: left;
+  height: 80vh; /* Asegura que ocupe toda la altura de la vista */
+  width: 100%;
+  padding-top: 5%;
+  /* padding-bottom: 20vh; */
+  
+  box-shadow: 0 8px 20px rgba(3, 250, 19, 0.89);
+  /* background: linear-gradient(135deg, #000b6e69, #000d3da8); */
+}
+
+.landing-container h2 {
+  font-size: 5vh;
+  color: #bff109; /* Color de texto */
+  /* font-weight: bold; */
+  padding-left: 9.5%;
+
+  /* box-shadow: 0 8px 20px rgba(3, 250, 19, 0.89); */
+  padding-bottom: 5vh;
+  font-family: "Arial", sans-serif;
+  font-weight: 600;
+}
+
+.landing-container p {
+  font-size: 3vh; /* Tamaño de fuente */
+  font-weight: normal;
+  font-style: normal; 
+  padding-left: 9.5%; 
+  padding-right: 27%; 
+  font-family: "Arial", sans-serif;
+}
+.test {
+  font-size: 8vh; 
+  font-weight: 545; /* Opcional para resaltar */
+  color: #ffffff; 
+  display: inline-block; /* Necesario para que el margen afecte al span */
+  margin-top: 11px;
+}
+
+/*
+ * Estilos para los fake buttóns;
+*/
+
+.button1 {
+    padding-left: 9.5%;
+    padding-bottom: 2%;
+  }
+  #slideButton1 {
+    padding: 10px 8px;
+    background-color: #bff109;
+    border-radius: 5px;
+    font-weight: 510;
+    font-size: 2.8vh;
+    border: none;
+  }
+  
+  /* CONTENEDOR DEL BOTÓN */
+  .button2 {
+    right: 7%;
+    top: 45%;
+    transform: translateY(-50%);
+    position: absolute;
+    text-align: center;
+  }
+  
+  #slideButton2 {
+    padding: 30px 25px;
+    background-color: transparent;
+    border: 2px solid #bff109;
+    border-radius: 20px;
+    font-size: 3vh;
+    color: white;
+    display: flex;
+    flex-direction: column; /* Elementos en columna: fila principal y barra de nivel */
+    align-items: center;
+    gap: 10px;
+    position: relative;
+  }
+  
+  .button {
+    padding-left: 9.5%;
+  }
+  
+  #slideButton {
+    /* display: block; */
+    margin: 5vh auto;
+    padding: 15px 25px;
+    letter-spacing: 2px; /* Espaciado de letras para darle aire */
+    background-color: #ffffff;
+    font-size: 15px;
+    font-weight: bold;
+    border-radius: 1px;
+    cursor: pointer;
+    color: rgb(0, 0, 0);
+    border: 1px solid white;
+  }
+  
+  #slideButton:hover {
+    background-color: rgba(0, 0, 0, 0); /* Verde claro casi transparente */
+    border-color: #ffffff;
+    color: white;
+  }
+  
+  /* FILA: RELOJ, TEXTO, SIGNO DE EXCLAMACIÓN */
+  .content-row {
+    display: flex;
+    align-items: center; /* Alinea verticalmente los elementos */
+    justify-content: space-between;
+    width: 100%; /* Ocupa todo el ancho del botón */
+  }
+  
+  /* ICONO DEL RELOJ */
+  .icon-left {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-right: 10px;
+  }
+  
+  .clock {
+    width: 20px;
+    height: 20px;
+    border: 2px solid #bff109;
+    border-radius: 50%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .clock-face {
+    width: 4px;
+    height: 4px;
+    background-color: #bff109;
+    border-radius: 50%;
+    z-index: 2;
+  }
+  
+  .hour-hand {
+    width: 2px;
+    height: 6px;
+    background-color: #bff109;
+    position: absolute;
+    top: 5px;
+    transform: rotate(45deg);
+    transform-origin: bottom center;
+  }
+  
+  .minute-hand {
+    width: 1px;
+    height: 8px;
+    background-color: #bff109;
+    position: absolute;
+    top: 3px;
+    transform: rotate(90deg);
+    transform-origin: bottom center;
+  }
+  
+  /* SIGNO DE EXCLAMACIÓN */
+  
+  .icon-right {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 20px;
+    height: 20px;
+    background-color: transparent;
+    border: 2px solid #bff109;
+    border-radius: 50%;
+    color: #bff109;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-left: 10px;
+  }
+  
+  .icon-right:hover {
+    background-color: rgba(255, 255, 255, 0.2); /* Fondo al hacer hover */
+  }
+  
+  /* BARRA DE NIVEL */
+  .level-bar {
+    display: flex;
+    justify-content: flex-start;
+    gap: 4px;
+    width: 100%; /* Ocupa todo el ancho del botón */
+    padding-top: 5%;
+  }
+  
+  .bar {
+    width: 5px;
+    height: 20px;
+    background-color: rgb(0, 131, 0);
+    border-radius: 2px;
+  }
+  
+  .bar.green-light {
+    background-color: #bff109;
+  }
+  
+  /* 
+     *########################### FIN Landing Container #####################################; 
+  */
