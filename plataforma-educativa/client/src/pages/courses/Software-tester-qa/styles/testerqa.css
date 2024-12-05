@@ -25,7 +25,8 @@ body {
   padding: 0;
   margin: 0;
   color: white;
-  overflow: auto;
+  
+  overflow-x: hidden;
 }
 
 .landing-container {
@@ -232,3 +233,280 @@ body {
   /* 
      *########################### FIN Landing Container #####################################; 
   */
+
+/*
+   *certificate container; 
+*/
+
+.imagen {
+  flex: 0.8;
+  display: flex;
+  justify-content: center; /* Centra la imagen horizontalmente */
+  align-items: center; /* Centra la imagen verticalmente */
+  z-index: 999;
+}
+
+/* Estilos para la imagen */
+.imagen img {
+  width: 65%;
+  height: auto; /* Mantiene la proporción de la imagen */
+}
+
+.certificate-container {
+  display: flex;
+  width: 100%;
+  height: 70vh;
+  
+  background: white;
+}
+
+/* Contenedor de encabezados h2 */
+.headers-container {
+  flex: 1;
+  /* display: flex; */
+  flex-direction: column;
+
+  height: 80%;
+
+  z-index: 999;
+}
+
+/* Estilos para el H2 */
+.headers-container h2 {
+  font-family: "Arial", sans-serif;
+  font-size: 6.3vh; /* Tamaño más grande para "Tester QA Manual" */
+  font-weight: bold; /* Opcional para resaltar */
+  color: #0027d3;
+  padding-left: 17%;
+  padding-top: 11%;
+}
+
+/* Estilos para el H3 */
+.headers-container h3 {
+  font-size: 3.5vh;
+  color: black;
+  padding-left: 17%;
+  font-weight: 400;
+  letter-spacing: 1.5px;
+  word-spacing: 5px;
+  font-family: "Arial", sans-serif;
+  padding-right: 10%;
+}
+/* 
+   *########################### FIN certificate container ####################################; 
+*/
+
+/*
+   *banner container; 
+*/
+
+/* Estilo del banner */
+.banner {
+  width: 100%;
+  height: 20vh;
+  overflow: hidden;
+  background-color: white;
+  display: flex;
+  align-items: center;
+}
+.banner-text {
+  background-color: white;
+  text-align: center;
+  padding-bottom: 2%;
+}
+.banner-span-text {
+  font-family: "Arial", sans-serif;
+  justify-content: center;
+  color: black;
+  font-size: 4vh;
+}
+/* Slider para mover los logos */
+.slider {
+  display: flex;
+  gap: 50px; /* Espacio entre íconos */
+  animation: scroll 20s linear infinite; /* Movimiento continuo */
+  width: 100%;
+  /* overflow: hidden; 
+  box-sizing: border-box; */
+}
+
+.slider img {
+  height: 10vh; 
+  max-width: 100%; /* Restringe el ancho máximo */
+  object-fit: contain; /* Mantén la proporción */
+}
+
+/* Animación */
+@keyframes scroll {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.banner-info {
+  background-color: white;
+  text-align: center;
+  padding-top: 5%;
+  width: 100%;
+  height: 20vh;
+}
+.banner-span-info {
+  font-family: "Arial", sans-serif;
+  justify-content: center;
+  color: rgb(19, 0, 70);
+  font-size: 6.5vh;
+  font-weight: bold;
+}
+/* 
+   *########################### FIN banner container ####################################; 
+*/
+
+/*
+   *content container; 
+*/
+
+
+/* Contenedor principal */
+.content-container {
+  width: 100%;
+  height: 50vh;
+  display: flex;
+  justify-content: space-around; /* Espaciado igual entre los rectángulos */
+  align-items: center; /* Centrar verticalmente los rectángulos */
+  padding: 20px; 
+  background-color: white;
+  position: relative; 
+  overflow: hidden;
+}
+
+/* Estilo común para los rectángulos */
+.rectangle {
+  width: 35%; /* Cada rectángulo ocupa un 45% del ancho */
+  height: 80%; /* Altura relativa dentro del contenedor */
+  background-color: white;
+  border: 2px solid #ddd; /* Borde sutil */
+  border-radius: 8px; /* Bordes redondeados */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra suave */
+  padding: 20px;
+  /* padding-top: 0; */
+  position: relative; /* Asegura que estén sobre los decorativos */
+  z-index: 999;
+}
+
+.rectangle ul {
+  list-style-type: disc; /* Lista con puntos */
+  padding-left: 20px; /* Indentación para la lista */
+}
+
+.rectangle ul li {
+  margin-bottom: 10px;
+  font-size: 3.5vh;
+  color: #555;
+  font-weight: none;
+}
+
+/* Fondo diferente para los rectángulos */
+.left {
+  background-color: #e8f5e9; /* Verde claro */
+}
+
+.right {
+  background-color: #e3f2fd; /* Azul claro */
+}
+
+/* Estilo para los rectángulos decorativos */
+.decorative-rect {
+  position: absolute;
+  background-color: rgba(0, 0, 255, 0.1); /* Azul translúcido */
+  border: 2px solid rgba(0, 0, 255, 0.2); /* Borde suave */
+  border-radius: 10px; /* Opcional para bordes redondeados */
+  z-index: 0; /* Asegura que estén detrás del contenido principal */
+}
+
+/* Tamaño y posición de los decorativos */
+.decorative-rect:nth-child(1) {
+  width: 300px;
+  height: 150px;
+  top: 10%;
+  left: 5%;
+}
+
+.decorative-rect:nth-child(2) {
+  width: 200px;
+  height: 100px;
+  top: 40%;
+  left: 25%;
+}
+
+.decorative-rect:nth-child(3) {
+  width: 350px;
+  height: 200px;
+  bottom: 5%;
+  right: 10%;
+  background-color: rgba(255, 0, 0, 0.1); /* Rojo translúcido */
+  border: 2px solid rgba(255, 0, 0, 0.2);
+}
+
+.decorative-rect:nth-child(4) {
+  width: 250px;
+  height: 120px;
+  top: 10%;
+  right: 5%;
+  background-color: rgba(0, 255, 0, 0.1); /* Verde translúcido */
+  border: 2px solid rgba(0, 255, 0, 0.2);
+}
+
+/* Estilo del contenedor */
+.button-container {
+  width: 100%;
+  height: 30vh;
+  display: flex;
+  justify-content: center; /* Alinea los botones en el centro */
+  align-items: center;
+  gap: 40px; /* Ajusta este valor para el espacio entre botones */
+  background-color: #ffffff;
+}
+
+/* Estilo de los botones */
+.btn-left {
+  padding: 18px 33px;
+  background-color: #040029;
+  color: white;
+  border: 1px solid transparent; /* Borde predefinido transparente */
+  border-radius: 1px;
+  cursor: pointer;
+  font-size: 2.5vh;
+  transition: background-color 0.5s, border-color 0.5s, color 0.5s; /* Transiciones suaves */
+  font-weight: 600;
+}
+
+.btn-left:hover {
+  background-color: #ffffff; /* Cambia el color al pasar el cursor */
+  color: black;
+  border-color: black; /* Cambia solo el color del borde */
+}
+
+.btn-right {
+  padding: 18px 33px;
+  background-color: white;
+  color: black;
+  border: 1px solid black; /* Borde predefinido */
+  border-radius: 1px;
+  cursor: pointer;
+  font-size: 2.5vh;
+  transition: background-color 0.3s, color 0.3s; /* Transiciones suaves */
+  font-weight: 600;
+}
+
+.btn-right:hover {
+  background-color: #040029; /* Cambia el color al pasar el cursor */
+  color: white;
+  border-color: black; /* El borde no se altera visualmente */
+}
+
+/* 
+   *########################### FIN content-container ####################################; 
+*/

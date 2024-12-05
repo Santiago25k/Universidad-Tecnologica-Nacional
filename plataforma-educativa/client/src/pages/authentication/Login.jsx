@@ -50,8 +50,9 @@ const Login = () => {
 
       const data = await response.json();
       localStorage.setItem("authToken", data.token); // Almacena el token (si es necesario)
+      console.log(data); // Verifica que la respuesta sea correcta
       alert("Inicio de sesión exitoso");
-      navigate("/dashboard"); // Cambia "/dashboard" a la ruta deseada
+      navigate("/"); // Cambia "/dashboard" a la ruta deseada
     } catch (error) {
       console.error("Error:", error.message);
       alert("Error al iniciar sesión: " + error.message);

@@ -1,0 +1,66 @@
+/* Estilo principal para la página de cursos */
+.cursos-container {
+    padding: 20px;
+  }
+  
+  .cursos-title {
+    text-align: center;
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: #333;
+  }
+  
+  /* Contenedor de las tarjetas de cursos */
+  .cursos-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+  }
+  
+  /* Tarjetas individuales de cursos */
+  .curso-card {
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 16px;
+    width: 300px;
+    text-align: center;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  
+  .curso-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+  }
+  
+  /* Título del curso */
+  .curso-nombre {
+    font-size: 1.5rem;
+    margin: 10px 0;
+    color: #007BFF;
+  }
+  
+  /* Descripción del curso */
+  .curso-descripcion {
+    font-size: 1rem;
+    margin-bottom: 20px;
+    color: #555;
+  }
+  
+  /* Botón */
+  .curso-boton {
+    padding: 10px 20px;
+    background-color: #007BFF;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.2s ease;
+  }
+  
+  .curso-boton:hover {
+    background-color: #0056b3;
+  }
+  
