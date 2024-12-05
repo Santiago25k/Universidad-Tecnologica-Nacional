@@ -2,14 +2,15 @@
 
 const connection = require("../config/db");
 
-//!Obbtener todos los cursos
+//! Obtener todos los cursos
 exports.getAllCourses = (req, res) => {
   const query = "SELECT * FROM cursos";
   connection.query(query, (err, results) => {
     if (err) {
       return res.status(500).json({ error: "Error al obtener cursos" });
     }
-    res.json(results);
+    //console.log(results); // Verifica qué datos devuelve la consulta
+    res.json(results); // Debería ser un array de cursos
   });
 };
 

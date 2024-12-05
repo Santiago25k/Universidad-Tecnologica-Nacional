@@ -85,7 +85,18 @@ exports.login = (req, res) => {
       { expiresIn: "1h" }
     );
     //console.log("Token generado:", token);
-    res.json({ message: "Inicio de sesión exitoso", token });
+    //? Incluir los datos del usuario en la respuesta
+    res.json({
+      message: "Inicio de sesión exitoso",
+      token,
+      user: {
+        id: user.id_usuario,
+        nombre: user.nombre,
+        apellido: user.apellido,
+        email: user.email,
+        rol: user.rol,
+      },
+    });
   });
 };
 
