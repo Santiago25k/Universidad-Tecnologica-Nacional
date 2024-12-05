@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+/*import React, { useState } from "react";
 import "./styles/navbar.css";
 
 const NavBar = () => {
@@ -47,3 +47,4 @@ const NavBar = () => {
 };
 
 export default NavBar;
+*/
