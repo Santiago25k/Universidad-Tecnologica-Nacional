@@ -17,16 +17,14 @@
 
 /* Thumb cuando pasa el ratón */
 ::-webkit-scrollbar-thumb:hover {
-  background: #555; /* Color del thumb al pasar el ratón */
+  background: #555;
 }
 
 body {
   /* background-color: #fffbfbfa; */
   padding: 0;
   margin: 0;
-  color: white;
   
-  overflow-x: hidden;
 }
 
 .landing-container {
@@ -35,7 +33,7 @@ body {
   width: 100%;
   padding-top: 5%;
   /* padding-bottom: 20vh; */
-  
+  background: linear-gradient(135deg, #000b6e69, #000d3da8);
   box-shadow: 0 8px 20px rgba(3, 250, 19, 0.89);
   /* background: linear-gradient(135deg, #000b6e69, #000d3da8); */
 }
@@ -384,7 +382,7 @@ body {
 
 /* Estilo común para los rectángulos */
 .rectangle {
-  width: 35%; /* Cada rectángulo ocupa un 45% del ancho */
+  width: 40%; /* Cada rectángulo ocupa un 45% del ancho */
   height: 80%; /* Altura relativa dentro del contenedor */
   background-color: white;
   border: 2px solid #ddd; /* Borde sutil */
@@ -395,6 +393,13 @@ body {
   position: relative; /* Asegura que estén sobre los decorativos */
   z-index: 999;
 }
+/* .content ul li{
+  color: black;
+  font-size: 3vh;
+  margin-bottom: 8px;
+  padding-top: 20px;
+  margin-left: 25px;
+} */
 
 .rectangle ul {
   list-style-type: disc; /* Lista con puntos */
@@ -406,6 +411,9 @@ body {
   font-size: 3.5vh;
   color: #555;
   font-weight: none;
+  padding: 5px;
+  /* padding-top: 20px;
+  margin-left: 25px; */
 }
 
 /* Fondo diferente para los rectángulos */
@@ -428,34 +436,28 @@ body {
 
 /* Tamaño y posición de los decorativos */
 .decorative-rect:nth-child(1) {
-  width: 300px;
-  height: 150px;
-  top: 10%;
-  left: 5%;
+  width: 400px;
+  height: 200px;
+  top: 1%;
+  left: 1%;
 }
+
 
 .decorative-rect:nth-child(2) {
-  width: 200px;
-  height: 100px;
-  top: 40%;
-  left: 25%;
-}
-
-.decorative-rect:nth-child(3) {
   width: 350px;
   height: 200px;
-  bottom: 5%;
+  bottom: 0;
   right: 10%;
-  background-color: rgba(255, 0, 0, 0.1); /* Rojo translúcido */
+  background-color: rgba(255, 0, 0, 0.1); 
   border: 2px solid rgba(255, 0, 0, 0.2);
 }
 
-.decorative-rect:nth-child(4) {
+.decorative-rect:nth-child(3) {
   width: 250px;
   height: 120px;
   top: 10%;
-  right: 5%;
-  background-color: rgba(0, 255, 0, 0.1); /* Verde translúcido */
+  right: 0;
+  background-color: rgba(0, 255, 0, 0.1); 
   border: 2px solid rgba(0, 255, 0, 0.2);
 }
 
@@ -509,4 +511,187 @@ body {
 
 /* 
    *########################### FIN content-container ####################################; 
+*/
+
+/*
+   *requisitos container; 
+*/
+
+.requisitos-container {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  background-color: white;
+}
+
+
+.requisitos-headers-container h2 {
+  font-family: "Arial", sans-serif;
+  font-size: 6.3vh; 
+  font-weight: bold;
+  color: rgb(9, 0, 59);
+  padding-left: 9.3%;
+}
+
+.requisitos-headers-container h3 {
+  font-size: 3.5vh;
+  color: black;
+  padding-left: 9.3%;
+  font-weight: 400;
+  letter-spacing: 1.5px;
+  word-spacing: 5px;
+  font-family: "Arial", sans-serif;
+  padding-right: 10%;
+  padding-top: 0;
+}
+
+/* 
+   *########################### FIN .requisitos-container ####################################; 
+*/
+
+
+/*
+   *container-study-plan; 
+*/
+.container-study-plan {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 100%;
+  font-family: Arial, sans-serif;
+  padding: 20px;
+  box-sizing: border-box;
+  padding-top: 10%;
+  padding-left: 9.3%;
+  background-color: white;
+}
+
+.study-plan {
+  flex: 1; /* Ocupa el espacio disponible a la izquierda */
+  max-width: 50%;
+  
+}
+
+.study-plan h2 {
+  text-align: left;
+  margin-bottom: 20px;
+  color: rgb(27, 11, 252);
+  font-size: 6.3vh;
+  font-weight: bold;
+  /* padding-left: 10%; */
+  padding-bottom: 5%;
+  padding-left: 0;
+}
+
+
+
+.accordion-content ul {
+  padding-left: 20px; /* Asegura que haya espacio para las viñetas */
+  list-style-type: disc;
+}
+.accordion-content li {
+  /* Asegura que haya espacio para las viñetas */
+  list-style-type: disc;
+  color: black;
+  font-size: 3vh;
+  margin-bottom: 8px;
+  padding-top: 20px;
+  margin-left: 25px;
+}
+
+.accordion-item {
+  margin-bottom: 10px;
+}
+.accordion-header {
+  width: 100%;
+  background-color: white;
+  /* border-top: 1px solid black;  */
+  /* border-bottom: 1px solid black;  */
+  border-bottom: none;
+  border-left: none; 
+  border-right: none; 
+
+  padding: 15px;
+  text-align: left;
+  font-size: 3.7vh;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 0;
+}
+
+.accordion-header:hover {
+ 
+  border-color: blue; /* Cambiar el borde a azul */
+}
+.accordion-header.open {
+  border-color: blue; /* Cambiar el borde cuando el acordeón está abierto */
+  border-bottom: none; 
+}
+.accordion-header .plus {
+  transition: transform 0.5s ease; 
+  color: blue;
+  font-size: 6vh;
+}
+
+.accordion-header.open .plus {
+  transform: rotate(360deg);
+}
+.accordion-content {
+  max-height: 0; /* Inicialmente colapsado */
+  overflow: hidden; /* Oculta el contenido excedente */
+  transition: max-height 0.3s ease-out; /* Animación suave para expandir y contraer */
+}
+
+.imagen-course {
+  flex: 1; /* Ocupa el espacio disponible a la derecha */
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.imagen-course img {
+  width: 65%;
+  padding-top: 20%;
+  height: auto;
+ 
+}
+
+
+/* 
+   *########################### FIN .container-study-plan; ####################################; 
+*/
+
+/*
+   *headers-container; 
+*/
+
+.headers-container ul {
+  /* list-style-type: none; */
+  margin: 20px 0;
+  padding-left: 10%;
+}
+
+.headers-container ul li {
+  margin-bottom: 15px; 
+  padding: 10px; 
+  background: #f7f7f7; 
+  border-left: 4px solid #2196f3; 
+  border-radius: 5px; 
+  font-size: 3.5vh; 
+  color: #333; 
+}
+
+.headers-container h3{
+  padding-top: 10px;
+  padding-bottom: 20px;
+}
+.imagen-learning{
+  padding-top: 8%;
+  padding-left: 10%;
+}
+/* 
+   *########################### FIN .headers-container; ####################################; 
 */

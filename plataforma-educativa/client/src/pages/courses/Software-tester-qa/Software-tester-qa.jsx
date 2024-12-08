@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from 'react';
 import { useNavigate } from "react-router-dom";
 import "./styles/testerqa.css";
 
@@ -11,6 +11,9 @@ import McDonald from "../../../assets/img/mcdonalds-5.svg";
 import Microsoft from "../../../assets/img/microsoft-6.svg";
 import Lenovo from "../../../assets/img/lenovo-2.svg";
 import ICBC from "../../../assets/img/icbc-pure-square.svg";
+import imagenCourse1 from "../../../assets/img/course-syllabus-vector.svg";
+import baseLearning from "../../../assets/img/base-learning-guarantee-vector.svg"
+import { acordeon } from "./scripts/acordeon";
 
 const CursoTesterQA = () => {
   const navigate = useNavigate();
@@ -23,6 +26,10 @@ const CursoTesterQA = () => {
   const handleMoreInfoClick = () => {
     alert("Más información sobre el curso");
   };
+
+  useEffect(() => {
+    acordeon(); // Ejecutar la función acordeon después de que el componente se monte
+  }, []); // El arreglo vacío asegura que solo se ejecute una vez
 
   return (
     <div className="landing-container">
@@ -116,7 +123,7 @@ const CursoTesterQA = () => {
         </div>
       </div>
 
-      <div class="mas-informacion" id="mas-informacion"></div>
+      <div className="mas-informacion" id="mas-informacion"></div>
       <div className="banner-info">
         <span className="banner-span-info">En este curso aprenderás</span>
       </div>
@@ -124,7 +131,7 @@ const CursoTesterQA = () => {
       <div className="content-container">
         {/* Rectángulos decorativos */}
         <div className="decorative-rect"></div>
-        <div className="decorative-rect"></div>
+        {/* <div className="decorative-rect"></div> */}
         <div className="decorative-rect"></div>
         <div className="decorative-rect"></div>
         <div className="rectangle left">
@@ -146,8 +153,148 @@ const CursoTesterQA = () => {
       </div>
 
       <div className="button-container">
-        <button className="btn-left" onClick={handleInscriptionClick}>Quiero inscribirme</button>
+        <button className="btn-left" onClick={handleInscriptionClick}>
+          Quiero inscribirme
+        </button>
         <button className="btn-right">Descargar plan de estudio</button>
+      </div>
+
+      {/* requisitos-container */}
+      <div className="requisitos-container">
+        <div className="requisitos-headers-container">
+          <h2>Requisitos previos</h2>
+
+          <h3>
+            <b>Conocimientos:</b> No se necesita experiencia previa ni
+            conocimientos técnicos.
+          </h3>
+        </div>
+      </div>
+
+      {/* container-study-plan */}
+      <div className="container-study-plan">
+        <div className="study-plan">
+          <h2>Plan de Estudio</h2>
+          <div className="accordion-item">
+            <button className="accordion-header">
+              Conceptos de calidad <span className="plus">+</span>
+            </button>
+            <div className="accordion-content">
+              <ul>
+                <li>Atributos de calidad.</li>
+                <li>Normas y estándares.</li>
+                <li>Conceptos de testing.</li>
+                <li>Fundamentos del testing.</li>
+                <li>Tipos y técnicas de pruebas.</li>
+              </ul>
+            </div>
+          </div>
+          <div className="accordion-item">
+            <button className="accordion-header">
+              Conceptos de casos de prueba <span className="plus">+</span>
+            </button>
+            <div className="accordion-content">
+              <ul>
+                <li>Atributos de un caso de prueba.</li>
+                <li>Matriz de trazabilidad y tips.</li>
+              </ul>
+            </div>
+          </div>
+          <div className="accordion-item">
+            <button className="accordion-header">
+              Conceptos de defectos <span className="plus">+</span>
+            </button>
+            <div className="accordion-content">
+              <ul>
+                <li>Atributos del defecto.</li>
+                <li>Causa y raiz del bug.</li>
+              </ul>
+            </div>
+          </div>
+          <div className="accordion-item">
+            <button className="accordion-header">
+              Conceptos de automatización <span className="plus">+</span>
+            </button>
+            <div className="accordion-content">
+              <ul>
+                <li>Creación de un script automatizado y ejecución.</li>
+                <li>Scripting bajo Selenium IDE.</li>
+              </ul>
+            </div>
+          </div>
+          <div className="accordion-item">
+            <button className="accordion-header">
+              Test de Perfomance <span className="plus">+</span>
+            </button>
+            <div className="accordion-content">
+              <ul>
+                <li>Test de carga.</li>
+                <li>Test de stress.</li>
+                <li>Plan de pruebas no funcionales.</li>
+                <li>Pruebas bajo JMeter.</li>
+              </ul>
+            </div>
+          </div>
+          <div className="accordion-item">
+            <button className="accordion-header">
+              Conceptos de proyectos <span className="plus">+</span>
+            </button>
+            <div className="accordion-content">
+              <ul>
+                <li>Riesgos, ambiente.</li>
+                <li>Estrategias y estimaciones.</li>
+                <li>Plan de pruebas.</li>
+                <li>KPI e informes.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <div className="imagen-course">
+          <img src={imagenCourse1} alt="imagenCourse1" />
+        </div>
+      </div>
+
+      <div className="certificate-container">
+        <div className="imagen-learning">
+          <img
+            src={baseLearning}
+            alt="base-learning"
+          />
+        </div>
+        <div className="headers-container">
+          <h2>Garantia de aprendizaje</h2>
+          <h3>
+            ¡Repasa y refuerza cuando lo
+            necesites!
+          </h3>
+          <ul>
+            <li>Toma nuevamente el curso de manera gratuita.</li>
+            <li>Recupera las clases que no pudiste asistir.</li>
+            <li>Refuerza tu conocimiento con nuevos recursos disponibles.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div className="certificate-container">
+        <div className="headers-container">
+          <h2>Plataforma Propia</h2>
+          <h3>
+            Accede a las clases en vivo y al material adicional de estudio a
+            través de nuestra plataforma virtual.
+          </h3>
+          <ul>
+            <li>Suma ITCréditos y canjéalos por cursos.</li>
+            <li>Realiza los exámenes desde tu casa y certifícate..</li>
+            <li>Mantente conectado con la comunidad.</li>
+          </ul>
+        </div>
+        <div className="imagen">
+          <img
+            src={baseLearning}
+            alt="base-learning"
+          />
+        </div>
       </div>
     </div>
   );
